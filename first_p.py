@@ -14,21 +14,27 @@ def addAdress2(name,loc):
         print('not found')
 
 def delWithName3(name):
-    tel.pop(name)
-    address.pop(name)
-    print('Your name and was deleted!.')
+    if len(tel)!=0 and len(address)!=0:
+        tel.pop(name)
+        address.pop(name)
+        print('Your name and was deleted!.')
+    else:
+        print('tel and address dict is empty.')
 
 def search_phone_number4(name):
     if name in tel:
         print(tel[name])
 
 def change_name5(name, newname):
-    if name in (tel and address):
-        tel[newname] = tel.pop(name)
-        address[newname] = address.pop(name)
+    if name in (tel or address):
+
+        if len(tel) != 0:
+            tel[newname] = tel.pop(name)
+        if len(address) != 0:
+            address[newname] = address.pop(name)
         print('Your name changed.')
     else:
-        print('not found!')
+        print('Your name was not found!')
 
 def sorting6():
     mytel_list = list(tel.items())
@@ -42,13 +48,6 @@ def sorting6():
 
 
 
-
-'''test = {'momad' : '1231' ,'wwer' : 'ewr', 'hd' : '12' ,'ali':'021'}
-d = {'ali' : 'asdas'}
-
-print('before : ', test)
-test.pop('momad')
-print(test)'''
 
 while True:
     print('1. Add name and phone number.')
