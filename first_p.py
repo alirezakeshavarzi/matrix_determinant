@@ -14,27 +14,25 @@ def addAdress2(name,loc):
         print('not found')
 
 def delWithName3(name):
-    if len(tel)!=0 and len(address)!=0:
+
+    if len(tel) != 0:
         tel.pop(name)
+    if len(tel) !=0:
         address.pop(name)
-        print('Your name and was deleted!.')
-    else:
-        print('tel and address dict is empty.')
+    print('Your name and was deleted!.')
 
 def search_phone_number4(name):
     if name in tel:
-        print(tel[name])
+        print('Your phone number : ',tel[name])
 
 def change_name5(name, newname):
-    if name in (tel or address):
+    #if name in (tel or address):
 
-        if len(tel) != 0:
-            tel[newname] = tel.pop(name)
-        if len(address) != 0:
-            address[newname] = address.pop(name)
-        print('Your name changed.')
-    else:
-        print('Your name was not found!')
+    if len(tel) != 0:
+        tel[newname] = tel.pop(name)
+    if len(address) != 0:
+        address[newname] = address.pop(name)
+    print('Your name changed.')
 
 def sorting6():
     mytel_list = list(tel.items())
@@ -73,20 +71,36 @@ while True:
 
             addAdress2(na, loc)
             print()
-        elif n==3:
+        elif n==3: #delete
+
+            if len(tel) !=0 or len(address)!=0:
+                na = input('Your name : ')
+                delWithName3(na)
+            else:
+                print('tel and address dict is empty.')
+
+
+            print()
+
+        elif n==4: #search_phone
+            if len(tel) != 0 or len(address) != 0:
+                na = input('Your name : ')
+                search_phone_number4(na)
+            else:
+                print('tel and address dict is empty.')
+
+            print()
+
+        elif n==5: #change_name
             na = input('Your name : ')
 
-            delWithName3(na)
-            print()
-        elif n==4:
-            na = input('Your name : ')
-            search_phone_number4(na)
-            print()
-        elif n==5:
-            na = input('Your name : ')
-            na2 = input('Enter your new name : ')
+            if na in (tel or address):
+                na2 = input('Enter your new name : ')
+                change_name5(na, na2)
+            else:
+                print('Your name was not found.')
 
-            change_name5(na, na2)
+
             print()
         elif n==6:
             sorting6()
