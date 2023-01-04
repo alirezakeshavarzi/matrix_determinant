@@ -39,13 +39,12 @@ def sorting6():
 
 
 
-'''test = {'momad' : '1231' ,'wwer' : 'ewr', 'hd' : '12' ,'ali':'021'}
+test = {'momad' : '1231' ,'wwer' : 'ewr', 'hd' : '12' ,'ali':'021'}
 d = {'ali' : 'asdas'}
-test['mamad'] = test.pop('ali') # it's worked!
 
-mytest_list = list(test.items())
-mytest_list.sort()
-print(mytest_list)'''
+print('before : ', test)
+test.pop('momad')
+print(test)
 
 
 print('1. Add name and phone number.')
@@ -54,3 +53,28 @@ print('3. Delete phone number and address.')
 print('4. Searching for phone number.')
 print('5. Change your name.')
 print('6. Print sorting value of tel and address dict.')
+
+n = int(input('Please enter a number : '))
+
+if n >= 1 and n <=6:
+    if n==1:
+        na = input('Your name : ')
+        phone_n = input('Your phone number : ')
+
+        addNewName_Phone1(na, phone_n)
+    elif n==2:
+        na = input('Your name : ')
+        loc = input('Your address : ')
+
+        addAdress2(na, loc)
+    elif n==3:
+        na = input('Your name : ')
+
+        delWithName3(na)
+    elif n==4:
+    elif n==5:
+    elif n==6:
+    elif n==7:
+        pass
+
+
