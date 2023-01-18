@@ -1,5 +1,5 @@
 
-n=2
+n = int(input('Enter number : '))
 mat = [[int(input('Enter number : ')) for i in range(n) ] for j in range(n)] # getting matrix.
 
 
