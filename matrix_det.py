@@ -1,8 +1,14 @@
-import os
 
-q = [[int(input('Enter number : ')) for i in range(2) ] for j in range(2)]
+n=2
+mat = [[int(input('Enter number : ')) for i in range(n) ] for j in range(n)] # getting matrix.
 
 
-for i in range(2):
-    for j in range(1,3):
-        h = (q[j][i] / q[i][i]) * (-1)
+for i in range(1,n):
+
+    for j in range(n):
+        h = (mat[i][j] / mat[j][j]) * (-1)
+        for k in range(n):
+            h *= mat[j][k]
+            mat[i][k] += h
+
+print('matrix : ', mat)
