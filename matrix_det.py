@@ -4,11 +4,18 @@ mat = [[int(input('Enter number : ')) for i in range(n) ] for j in range(n)] # g
 
 
 for i in range(1,n):
-
     for j in range(n):
+
         h = (mat[i][j] / mat[j][j]) * (-1)
+
         for k in range(n):
+
             h *= mat[j][k]
             mat[i][k] += h
 
-print('matrix : ', mat)
+det = mat[0][0]
+for i in range(1,n):
+    det *= mat[i][i]
+
+print()
+print('determinant : ', det)
